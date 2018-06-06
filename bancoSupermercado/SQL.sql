@@ -1,4 +1,4 @@
--- Geração de Modelo físico
+-- GeraÃ§Ã£o de Modelo fÃ­sico
 -- Sql ANSI 2003 - brModelo.
 
 
@@ -20,7 +20,7 @@ valorTotal float
 
 CREATE TABLE Cadastrar Cliente (
 nomeCliente varchar(30),
-endereçoCliente_1 varchar(30),
+endereÃ§oCliente_1 varchar(30),
 cpfCliente int PRIMARY KEY,
 telefoneCliente varchar(30),
 cidadeCliente varchar(30),
@@ -35,9 +35,14 @@ codigoProduto int
 CREATE TABLE produto (
 codigoProduto int PRIMARY KEY,
 nomeProduto varchar,
-valorProduto float,
-pesoProduto float,
-imagemProduto varchar(100)
+tipoProduto varchar,
+marcaProduto varchar,
+embalagemProduto varchar,
+conteudoProduto varchar,
+complementoProduto varchar,
+precoProduto float,
+quantidadeProduto float
+
 )
 
 ALTER TABLE Oferta Relampago ADD FOREIGN KEY(codigoProduto) REFERENCES produto (codigoProduto)
