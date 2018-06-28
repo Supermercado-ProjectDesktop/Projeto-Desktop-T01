@@ -7,15 +7,41 @@ package Model;
 
 /**
  *
- * @author luiz-
+ * @author JoaoPirolo
  */
 public class Usuario {
-    String nome, tipo, password;
+    private String codUsuario;
+    private String cpf;
+    private String nome;
+    private String sobrenome;
+    private String tipoUsuario;
+    private String senha;
 
-    public Usuario(String nome, String tipo, String password) {
+    public Usuario(String codUsuario,String cpf, String nome, String sobrenome, String tipoUsuario, String senha) {
+        this.codUsuario = codUsuario;
+        this.cpf = cpf;
         this.nome = nome;
-        this.tipo = tipo;
-        this.password = password;
+        this.sobrenome = sobrenome;
+        this.tipoUsuario = tipoUsuario;
+        this.senha = senha;
+    }
+
+    public Usuario() {
+    }
+
+    public String getCodUsuario() {
+        return codUsuario;
+    }
+
+    public void setCodUsuario(String codUsuario) {
+        this.codUsuario = codUsuario;
+    }
+     public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -26,19 +52,33 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+   
+    
 }
+    
+
+    

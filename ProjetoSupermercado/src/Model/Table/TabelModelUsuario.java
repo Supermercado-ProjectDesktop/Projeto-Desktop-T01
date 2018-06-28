@@ -4,18 +4,20 @@
  * and open the template in the editor.
  */
 package Model.Table;
-import Model.Produto;
+
+import Model.Usuario;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+
 /**
  *
  * @author JOAO
  */
-public class TabelModelProduto extends AbstractTableModel {
+public class TabelModelUsuario extends AbstractTableModel {
     private static final long serialVersionUID = 1L;
-    List<Produto> list ;
+    List<Usuario> list ;
 
-    public TabelModelProduto(List<Produto> list) {
+    public TabelModelUsuario(List<Usuario> list) {
         this.list = list;
     }
        
@@ -26,16 +28,19 @@ public class TabelModelProduto extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 6;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
-            case 0 : return list.get(rowIndex).getCodProduto();
-            case 1 : return list.get(rowIndex).getNomeProduto();
-            case 2 : return list.get(rowIndex).getPrecoProduto();
-            case 3 : return list.get(rowIndex).getQtdProduto();
+            case 0 : return list.get(rowIndex).getCodUsuario();
+            case 1 : return list.get(rowIndex).getCpf();
+            case 2 : return list.get(rowIndex).getNome();
+            case 3 : return list.get(rowIndex).getSobrenome();
+            case 4 : return list.get(rowIndex).getTipoUsuario();
+            case 5 : return list.get(rowIndex).getSenha();
+            
                  default:return null;
         }
     }
@@ -43,13 +48,16 @@ public class TabelModelProduto extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         switch (column) {
-            case 0  : return "Codigo do Produto";
-            case 1  : return "Nome";
-            case 2  : return "Preco";
-            case 3  : return "Quantidade";
-           
+            case 0  : return "Codigo";
+            case 1  : return "CPF";
+            case 2  : return "Nome";
+            case 3  : return "Sobrenome";
+            case 4  : return "tipoUsuario";
+            case 5  : return "senha";
+            
             default : return null;
         }
     }
 }
+
 
