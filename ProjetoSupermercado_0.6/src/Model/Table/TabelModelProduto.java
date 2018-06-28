@@ -26,7 +26,7 @@ public class TabelModelProduto extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 9;
+        return 4;
     }
 
     @Override
@@ -34,13 +34,8 @@ public class TabelModelProduto extends AbstractTableModel {
         switch (columnIndex) {
             case 0 : return list.get(rowIndex).getCodProduto();
             case 1 : return list.get(rowIndex).getNomeProduto();
-            case 2 : return list.get(rowIndex).getTipoProduto();
-            case 3 : return list.get(rowIndex).getMarcaProduto();
-            case 4 : return list.get(rowIndex).getEmbalagemProduto();
-            case 5 : return list.get(rowIndex).getConteudoProduto();
-            case 6 : return list.get(rowIndex).getComplementoProduto();
-            case 7 : return list.get(rowIndex).getPrecoProduto();
-            case 8 : return list.get(rowIndex).getQtdProduto();
+            case 2 : return list.get(rowIndex).getPrecoProduto();
+            case 3 : return list.get(rowIndex).getQtdProduto();
                  default:return null;
         }
     }
@@ -50,13 +45,8 @@ public class TabelModelProduto extends AbstractTableModel {
         switch (column) {
             case 0  : return "Codigo do Produto";
             case 1  : return "Nome";
-            case 2  : return "Tipo";
-            case 3  : return "Marca";
-            case 4  : return "Embalagem";
-            case 5  : return "Conteudo";
-            case 6  : return "Complemento";
-            case 7  : return "Preco";
-            case 8  : return "Quantidade";
+            case 2  : return "Preco";
+            case 3  : return "Quantidade";
            
             default : return null;
         }

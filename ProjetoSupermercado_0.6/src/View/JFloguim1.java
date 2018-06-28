@@ -208,6 +208,7 @@ public class JFloguim1 extends javax.swing.JFrame {
         if (usuario.getUsuario(cpf,senha) == 1) {
             JOptionPane.showMessageDialog(null, " ____BEM VINDO____ ");
             JFMenu_principal log = new JFMenu_principal();
+            //TelaCliente log = new TelaCliente();
             log.setVisible(true);
 
         } else {

@@ -30,11 +30,6 @@ public class ProdutoController {
     public void reset(){
         panel.getTxtCodProduto().setText("");
         panel.getTxtNomeProduto().setText("");
-        panel.getTxtTipoProduto().setText("");
-        panel.getTxtMarcaProduto().setText("");
-        panel.getTxtEmbalagemProduto().setText("");
-        panel.getTxtContProduto().setText("");
-        panel.getTxtComplemento().setText("");
         panel.getTxtPrecoProduto().setText("");
         panel.getTxtQtdProduto().setText("");
         
@@ -51,11 +46,6 @@ public class ProdutoController {
         if (row != -1){
             panel.getTxtCodProduto().setText(String.valueOf(list.get(row).getCodProduto()));
             panel.getTxtNomeProduto().setText(list.get(row).getNomeProduto());
-            panel.getTxtTipoProduto().setText(list.get(row).getTipoProduto());
-            panel.getTxtMarcaProduto().setText(list.get(row).getMarcaProduto());
-            panel.getTxtEmbalagemProduto().setText(list.get(row).getEmbalagemProduto());
-            panel.getTxtContProduto().setText(list.get(row).getConteudoProduto());
-            panel.getTxtComplemento().setText(list.get(row).getComplementoProduto());
             panel.getTxtPrecoProduto().setText(String.valueOf(list.get(row).getPrecoProduto()));
             panel.getTxtQtdProduto().setText(String.valueOf(list.get(row).getQtdProduto()));
         }
@@ -69,11 +59,6 @@ public class ProdutoController {
         }
         produto.setCodProduto(Integer.parseInt(panel.getTxtCodProduto().getText()));
         produto.setNomeProduto(panel.getTxtNomeProduto().getText());
-        produto.setTipoProduto(panel.getTxtTipoProduto().getText());
-        produto.setMarcaProduto(panel.getTxtMarcaProduto().getText());
-        produto.setEmbalagemProduto(panel.getTxtEmbalagemProduto().getText()); 
-        produto.setConteudoProduto(panel.getTxtContProduto().getText()); 
-        produto.setComplementoProduto(panel.getTxtComplemento().getText());
         produto.setPrecoProduto(Double.parseDouble(panel.getTxtPrecoProduto().getText())); 
         produto.setQtdProduto(Integer.parseInt(panel.getTxtQtdProduto().getText()));
         
@@ -84,11 +69,6 @@ public class ProdutoController {
         Produto produto = new Produto();
         produto.setCodProduto(Integer.parseInt(panel.getTxtCodProduto().getText()));
         produto.setNomeProduto(panel.getTxtNomeProduto().getText());
-        produto.setTipoProduto(panel.getTxtTipoProduto().getText());
-        produto.setMarcaProduto(panel.getTxtMarcaProduto().getText());
-        produto.setEmbalagemProduto(panel.getTxtEmbalagemProduto().getText());
-        produto.setConteudoProduto(panel.getTxtContProduto().getText());
-        produto.setComplementoProduto(panel.getTxtComplemento().getText());
         produto.setPrecoProduto(Double.parseDouble(panel.getTxtPrecoProduto().getText()));
         produto.setQtdProduto(Integer.parseInt(panel.getTxtQtdProduto().getText()));
         

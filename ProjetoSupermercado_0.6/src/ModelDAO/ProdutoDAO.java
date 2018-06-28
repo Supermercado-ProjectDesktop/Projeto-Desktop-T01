@@ -31,11 +31,6 @@ public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
        
         mapObj.put("nomeProduto", produto.getNomeProduto());
         mapObj.put("codProduto", produto.getCodProduto());
-        mapObj.put("tipoProduto", produto.getTipoProduto());
-        mapObj.put("marcaProduto", produto.getMarcaProduto());
-        mapObj.put("embalagemProduto", produto.getEmbalagemProduto());
-        mapObj.put("conteudoProduto", produto.getConteudoProduto());
-        mapObj.put("complementoProduto", produto.getComplementoProduto());
         mapObj.put("precoProduto", produto.getPrecoProduto());
         mapObj.put("qtdProduto", produto.getQtdProduto());
 
@@ -48,11 +43,6 @@ public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
         Map<Object, Object> mapObj = new HashMap<>();
         Map<Object, Object> mapConditions = new HashMap<>();
         mapObj.put("nomeProduto", produto.getNomeProduto());
-        mapObj.put("tipoProduto", produto.getTipoProduto());
-        mapObj.put("marcaProduto", produto.getMarcaProduto());
-        mapObj.put("embalagemProduto", produto.getEmbalagemProduto());
-        mapObj.put("conteudoProduto", produto.getConteudoProduto());
-        mapObj.put("complementoProduto", produto.getComplementoProduto());
         mapObj.put("precoProduto", produto.getPrecoProduto());
         mapObj.put("qtdProduto", produto.getQtdProduto());
         mapConditions.put("codProduto", produto.getCodProduto());
@@ -77,11 +67,6 @@ public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
                 Produto produto = new Produto();
                 produto.setCodProduto(rs.getInt(1));
                 produto.setNomeProduto(rs.getString("nomeProduto"));
-                produto.setTipoProduto(rs.getString("tipoProduto"));
-                produto.setMarcaProduto(rs.getString("marcaProduto"));
-                produto.setEmbalagemProduto(rs.getString("embalagemProduto"));
-                produto.setConteudoProduto(rs.getString("conteudoProduto"));
-                produto.setComplementoProduto(rs.getString("complementoProduto"));
                 produto.setPrecoProduto(rs.getDouble("precoProduto"));
                 produto.setQtdProduto(rs.getInt("qtdProduto"));
                 
@@ -103,11 +88,6 @@ public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
                 Produto produto = new Produto();
                 produto.setCodProduto(rs.getInt(1));
                 produto.setNomeProduto(rs.getString("nomeProduto"));
-                produto.setTipoProduto(rs.getString("tipoProduto"));
-                produto.setMarcaProduto(rs.getString("marcaProduto"));
-                produto.setEmbalagemProduto(rs.getString("embalagemProduto"));
-                produto.setConteudoProduto(rs.getString("conteudoProduto"));
-                produto.setComplementoProduto(rs.getString("complementoProduto"));
                 produto.setPrecoProduto(rs.getDouble("precoProduto"));
                 produto.setQtdProduto(rs.getInt("qtdProduto"));
                 list.add(produto);
@@ -126,11 +106,6 @@ public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
         try {
             produto.setCodProduto(rs.getInt(1));
             produto.setNomeProduto(rs.getString("nomeProduto"));
-            produto.setTipoProduto(rs.getString("tipoProduto"));
-            produto.setMarcaProduto(rs.getString("marcaProduto"));
-            produto.setEmbalagemProduto(rs.getString("embalagemProduto"));
-            produto.setConteudoProduto(rs.getString("conteudoProduto"));
-            produto.setComplementoProduto(rs.getString("complementoProduto"));
             produto.setPrecoProduto(rs.getDouble("precoProduto"));
             produto.setQtdProduto(rs.getInt("qtdProduto"));
            return produto;

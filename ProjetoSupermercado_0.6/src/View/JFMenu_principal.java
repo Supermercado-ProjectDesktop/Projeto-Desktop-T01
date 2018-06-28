@@ -35,10 +35,6 @@ public class JFMenu_principal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         MenuInicio = new javax.swing.JMenu();
         MenuIniciarCompra = new javax.swing.JMenuItem();
-        OfertasRelampago = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        MenuPaguamento = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         menuCadastro = new javax.swing.JMenu();
@@ -57,7 +53,9 @@ public class JFMenu_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SISTEMA SUPERMERCADO ");
-        setPreferredSize(new java.awt.Dimension(1000, 700));
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         tela_interna.setPreferredSize(new java.awt.Dimension(900, 700));
 
@@ -119,45 +117,6 @@ public class JFMenu_principal extends javax.swing.JFrame {
 
         jMenuBar2.add(MenuInicio);
 
-        OfertasRelampago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/offer_50.png"))); // NOI18N
-        OfertasRelampago.setText("OFERTAS RELAMPAGO");
-        OfertasRelampago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        OfertasRelampago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OfertasRelampagoActionPerformed(evt);
-            }
-        });
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/hot.png"))); // NOI18N
-        jMenuItem3.setText("PRODUTOS");
-        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        OfertasRelampago.add(jMenuItem3);
-
-        jMenuBar2.add(OfertasRelampago);
-
-        MenuPaguamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/dollar.png"))); // NOI18N
-        MenuPaguamento.setText("PAGAMENTO ");
-        MenuPaguamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/mastercard.png"))); // NOI18N
-        jMenuItem1.setText("Cartões ");
-        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        MenuPaguamento.add(jMenuItem1);
-
-        jMenuBar2.add(MenuPaguamento);
-
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/bag_green.png"))); // NOI18N
         jMenu1.setText("CADASTRO PRODUTO");
 
@@ -195,13 +154,13 @@ public class JFMenu_principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tela_interna, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
+                .addComponent(tela_interna, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tela_interna, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+                .addComponent(tela_interna, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -210,10 +169,9 @@ public class JFMenu_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuIniciarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIniciarCompraActionPerformed
-       CadastroProduto tela = new CadastroProduto();
-       
-       tela_interna.add(tela);
+       TelaCliente tela = new TelaCliente();
        tela.setVisible(true);
+       dispose();
     
     }//GEN-LAST:event_MenuIniciarCompraActionPerformed
 
@@ -221,26 +179,12 @@ public class JFMenu_principal extends javax.swing.JFrame {
       
     }//GEN-LAST:event_MenuInicioActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-  
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void MenuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastrarClienteActionPerformed
         CadastroUsuario cadatroUser = new CadastroUsuario();
         cadatroUser.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_MenuCadastrarClienteActionPerformed
-
-    private void OfertasRelampagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfertasRelampagoActionPerformed
-       /*JFofertaRelanpago tela = new JFofertaRelanpago();
-       
-       tela_interna.add(tela);
-       tela.setVisible(true);*/
-    }//GEN-LAST:event_OfertasRelampagoActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-   
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
     CadastroProduto tela = new CadastroProduto();
@@ -259,16 +203,12 @@ public class JFMenu_principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuCadastrarCliente;
     private javax.swing.JMenuItem MenuIniciarCompra;
     private javax.swing.JMenu MenuInicio;
-    private javax.swing.JMenu MenuPaguamento;
-    private javax.swing.JMenu OfertasRelampago;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JDesktopPane tela_interna;
     // End of variables declaration//GEN-END:variables
