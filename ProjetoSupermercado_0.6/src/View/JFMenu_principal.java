@@ -230,11 +230,9 @@ public class JFMenu_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void MenuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastrarClienteActionPerformed
-        JFcadastroUsuario cadatroUser = new JFcadastroUsuario();
-       
-       tela_interna.add(cadatroUser);
-      cadatroUser.setVisible(true);
-      
+        CadastroUsuario cadatroUser = new CadastroUsuario();
+        cadatroUser.setVisible(true);
+        
     }//GEN-LAST:event_MenuCadastrarClienteActionPerformed
 
     private void OfertasRelampagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfertasRelampagoActionPerformed

@@ -41,11 +41,11 @@ public class DataBaseGeneric extends DataBase{
         return true;
     }
     
-    public ResultSet getOne(String NomeProduto){
+    public ResultSet getOne(int id){
         this.checkConnection();
         if(!this.checkEmptyTable())
             return null;
-        return this.query("SELECT * FROM " + this.table + " WHERE nomeProduto = ?", NomeProduto);
+        return this.query("SELECT * FROM " + this.table + " WHERE id = ?", id);
     }
     
     public ResultSet getAll(){
@@ -61,7 +61,7 @@ public class DataBaseGeneric extends DataBase{
             return null;
         return this.query("SELECT * FROM " + this.table + " WHERE " + field + " LIKE '%" + value + "%'");
     }
-    public ResultSet getProduto(){
+    public ResultSet getEqual(){
         this.checkConnection();
         if(!this.checkEmptyTable())
             return null;

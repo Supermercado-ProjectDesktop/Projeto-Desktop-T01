@@ -6,6 +6,7 @@
 package Model.Interface;
 
 import Model.Usuario;
+import java.util.List;
 
 /**
  *
@@ -13,7 +14,16 @@ import Model.Usuario;
  */
 public interface ImplementUsuario {
     public void insert(Usuario usuario);
-    public int getUsuario(String nome, String password);
-    public void deleteUsuario(String nome);
+    
+    public void deleteUsuario(String codUsuario);
+    
     public void updateUsuario(Usuario usuario);
+    
+    public int getUsuario(String cpf, String senha);
+    
+    public List<Usuario> getAllUsuario();
+    
+    public List<Usuario> getUsuarioByName(String nome);
+    
+    public Usuario getOneUsuario(int id);
 }

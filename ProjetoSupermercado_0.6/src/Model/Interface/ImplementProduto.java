@@ -23,5 +23,5 @@ public interface ImplementProduto {
     
     public List<Produto> getProdutoByName(String nomeProduto);
     
-    public Produto getOneProduto(String nomeProduto);
+    public Produto getOneProduto(int id);
 }

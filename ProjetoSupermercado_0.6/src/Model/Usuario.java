@@ -11,27 +11,22 @@ package Model;
  */
 public class Usuario {
     private String codUsuario;
+    private String cpf;
     private String nome;
     private String sobrenome;
-    private String password;
-    private String cpf;
-    private String endereco;
-    private String cidade;
-    private String email;
-    private String telefone;
-    private String celular;
+    private String tipoUsuario;
+    private String senha;
 
-    public Usuario(String codUsuario, String nome, String sobrenome, String password, String cpf, String endereco, String cidade, String email, String telefone, String celular) {
+    public Usuario(String codUsuario,String cpf, String nome, String sobrenome, String tipoUsuario, String senha) {
         this.codUsuario = codUsuario;
+        this.cpf = cpf;
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.password = password;
-        this.cpf = cpf;
-        this.endereco = endereco;
-        this.cidade = cidade;
-        this.email = email;
-        this.telefone = telefone;
-        this.celular = celular;
+        this.tipoUsuario = tipoUsuario;
+        this.senha = senha;
+    }
+
+    public Usuario() {
     }
 
     public String getCodUsuario() {
@@ -40,6 +35,13 @@ public class Usuario {
 
     public void setCodUsuario(String codUsuario) {
         this.codUsuario = codUsuario;
+    }
+     public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -58,63 +60,23 @@ public class Usuario {
         this.sobrenome = sobrenome;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
- 
+   
     
 }
     
