@@ -48,10 +48,10 @@ public class TabelModelUsuario extends AbstractTableModel {
     @Override
     public String getColumnName(int column) {
         switch (column) {
-            case 0  : return "codUsuario";
-            case 1  : return "cpf";
-            case 2  : return "nome";
-            case 3  : return "sobrenome";
+            case 0  : return "Codigo";
+            case 1  : return "CPF";
+            case 2  : return "Nome";
+            case 3  : return "Sobrenome";
             case 4  : return "tipoUsuario";
             case 5  : return "senha";
             

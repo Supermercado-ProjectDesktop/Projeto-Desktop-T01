@@ -33,10 +33,26 @@ public class UsuarioController {
         panel.getTxtCpf().setText("");
         panel.getTxtNome().setText("");
         panel.getTxtSobrenome().setText("");
+        panel.getTxtTipoUsuario().setText("");
+        panel.getTxtSenha().setText("");
         
-        
+        panel.getTabelUsuario().clearSelection();
         }
-
+    public void setTabel(){
+        list = implementUsuario.getAllUsuario();
+        panel.getTabelUsuario().setModel(new TabelModelUsuario(list));
+    }
+public  void getDataField(){
+        int row = panel.getTabelUsuario().getSelectedRow();
+        if (row != -1){
+            panel.getTxtCodUsuario().setText(list.get(row).getCodUsuario());
+            panel.getTxtCpf().setText(list.get(row).getCpf());
+            panel.getTxtNome().setText(list.get(row).getNome());
+            panel.getTxtSobrenome().setText(list.get(row).getSobrenome());
+            panel.getTxtTipoUsuario().setText(list.get(row).getTipoUsuario());
+            panel.getTxtSenha().setText(list.get(row).getSenha());
+        }
+    }
     public void insert(){
         Usuario user = new Usuario();
         if (panel.getTxtNome().getText().trim().isEmpty()){
@@ -74,4 +90,20 @@ public class UsuarioController {
         int row = Integer.parseInt(panel.getTxtCodUsuario().getText());
         implementUsuario.deleteUsuario("");
     }  
+        public void getData(){
+        if (panel.getTxtNome().getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(panel, "Digite um nome para buscar.", null, JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String name = panel.getTxtNome().getText();
+        implementUsuario.getUsuarioByName(name);
+        this.filterTable(name);
+    }
+    
+    public void filterTable(String nome){
+        list = implementUsuario.getUsuarioByName(nome);
+        panel.getTabelUsuario().setModel(new TabelModelUsuario(list));
+    }
+   
+
 }

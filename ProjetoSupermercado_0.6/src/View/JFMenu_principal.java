@@ -210,7 +210,7 @@ public class JFMenu_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuIniciarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuIniciarCompraActionPerformed
-       IniciarCompra tela = new IniciarCompra();
+       CadastroProduto tela = new CadastroProduto();
        
        tela_interna.add(tela);
        tela.setVisible(true);
@@ -222,11 +222,7 @@ public class JFMenu_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuInicioActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        JFCartão pague = new JFCartão();
-        
-       tela_interna.add(pague);
-       pague.setVisible(true);
-       
+  
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void MenuCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCadastrarClienteActionPerformed
@@ -243,9 +239,7 @@ public class JFMenu_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_OfertasRelampagoActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-JFofertaR ofer = new JFofertaR();
-       tela_interna.add(ofer);
-       ofer.setVisible(true);    
+   
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

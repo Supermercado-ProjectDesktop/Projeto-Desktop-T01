@@ -48,6 +48,7 @@ public class UsuarioDAO extends DataBaseGeneric implements ImplementUsuario {
     @Override
     public void deleteUsuario(String codUsuario) {
         Map<Object, Object> mapConditions = new HashMap<>();
+        
         mapConditions.put("codUsuario", codUsuario);
         this.genericDelete(mapConditions);
     }
