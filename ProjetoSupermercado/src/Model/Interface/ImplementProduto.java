@@ -17,9 +17,11 @@ public interface ImplementProduto {
     
     public void update(Produto produto);
     
-    public void delete(String name);
-    
-    public List<Produto> getProduto(String name);
+    public void delete(int codProduto);
     
     public List<Produto> getAllProduto();
+    
+    public List<Produto> getProdutoByName(String nomeProduto);
+    
+    public Produto getOneProduto(int id);
 }

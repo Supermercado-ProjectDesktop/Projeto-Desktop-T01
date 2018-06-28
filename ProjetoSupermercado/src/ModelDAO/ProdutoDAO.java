@@ -7,90 +7,110 @@ package ModelDAO;
 import Model.Interface.ImplementProduto;
 import Configuration.ConfigurationsMysql;
 import DataBase.DataBase;
+import DataBase.DataBaseGeneric;
 import Model.Produto;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 /**
  *
  * @author JOAO
  */
-public class ProdutoDAO implements ImplementProduto{
+public class ProdutoDAO extends DataBaseGeneric implements ImplementProduto{
     private List<Produto> list;
-    
-    private final DataBase db = new DataBase(new ConfigurationsMysql());
+    public ProdutoDAO(){
+        super(new ConfigurationsMysql(), "produto");
+    }
             
     @Override
-    public void insert(Produto produto) {
+    public void insert(Produto produto){
+        Map<Object, Object> mapObj = new HashMap<>();
        
-          this.db.execute("INSERT INTO produto (codProduto,nomeProduto,tipoProduto,marcaProduto,embalagemProduto,conteudoProduto,complementoProduto,precoProduto,qtdProduto)VALUES(?,?,?,?,?,?,?,?,?)",produto.getCodProduto(),produto.getNomeProduto(),produto.getTipoProduto(),produto.getMarcaProduto(),produto.getEmbalagemProduto(),produto.getConteudoProduto(),produto.getComplementoProduto(),produto.getPrecoProduto(),produto.getQtdProduto());
+        mapObj.put("nomeProduto", produto.getNomeProduto());
+        mapObj.put("codProduto", produto.getCodProduto());
+        mapObj.put("precoProduto", produto.getPrecoProduto());
+        mapObj.put("qtdProduto", produto.getQtdProduto());
+
+
+        this.genericInsert(mapObj);
     }
 
     @Override
-    public void update(Produto produto) {
-
-         this.db.execute("UPDATE produto SET codProduto=?, tipoProduto=?,marcaProduto=?,embalagemProduto=?,conteudoProduto=?,complementoProduto=?,precoProduto=?,qtdProduto=? WHERE nomeProduto LIKE '%" + produto.getNomeProduto() + "%'",
-                 produto.getCodProduto(),produto.getTipoProduto(),produto.getMarcaProduto(),
-                 produto.getEmbalagemProduto(),produto.getConteudoProduto(),produto.getPrecoProduto(),
-                 produto.getQtdProduto()
-                 );                                                    
+    public void update(Produto produto){
+        Map<Object, Object> mapObj = new HashMap<>();
+        Map<Object, Object> mapConditions = new HashMap<>();
+        mapObj.put("nomeProduto", produto.getNomeProduto());
+        mapObj.put("precoProduto", produto.getPrecoProduto());
+        mapObj.put("qtdProduto", produto.getQtdProduto());
+        mapConditions.put("codProduto", produto.getCodProduto());
+       
+        
+       this.genericUpdate(mapObj, mapConditions);
     }
 
     @Override
-    public void delete(String Nome) {
-        this.db.execute("DELETE FROM produto WHERE Nome LIKE '%"+ Nome + "%'");
+    public void delete(int CodProduto) {
+        Map<Object, Object> mapConditions = new HashMap<>();
+        mapConditions.put("codProduto", CodProduto);
+        this.genericDelete(mapConditions);
     }
 
     @Override
-    public List<Produto> getProduto(String Nome) {
-        list = new ArrayList<Produto>();
+    public List<Produto> getProdutoByName(String nomeProduto){
+        this.list = new ArrayList<>();
         try {
-            ResultSet rs = this.db.query("SELECT * FROM produto WHERE name LIKE '%" + Nome + "%'");
+            ResultSet rs = this.getLike("nomeProduto", nomeProduto);
             while (rs.next()) { 
-               
                 Produto produto = new Produto();
                 produto.setCodProduto(rs.getInt(1));
-                produto.setNomeProduto(rs.getString(2));
-                produto.setTipoProduto(rs.getString(3));
-                produto.setMarcaProduto(rs.getString(4));
-                produto.setEmbalagemProduto(rs.getString(5));
-                produto.setConteudoProduto(rs.getString(6));
-                produto.setComplementoProduto(rs.getString(7));
-                produto.setPrecoProduto(rs.getDouble(8));
-                produto.setQtdProduto(rs.getInt(9));
+                produto.setNomeProduto(rs.getString("nomeProduto"));
+                produto.setPrecoProduto(rs.getDouble("precoProduto"));
+                produto.setQtdProduto(rs.getInt("qtdProduto"));
                 
                 list.add(produto);
             }
             return list;
-        } catch (SQLException ex) {
+        } catch (SQLException ex){
             System.out.println("Houve um erro ao obter um produto: " + ex.getMessage());
         }
         return null;
     }
 
     @Override
-    public List<Produto> getAllProduto() {
-        list = new ArrayList<Produto>();
-        ResultSet rs = this.db.query("SELECT * FROM produto ORDER BY Nome");
+    public List<Produto> getAllProduto(){
+        list = new ArrayList<>();
+        ResultSet rs = this.getAll();
         try {
             while(rs.next()){
-               Produto produto = new Produto();
+                Produto produto = new Produto();
                 produto.setCodProduto(rs.getInt(1));
-                produto.setNomeProduto(rs.getString(2));
-                produto.setTipoProduto(rs.getString(3));
-                produto.setMarcaProduto(rs.getString(4));
-                produto.setEmbalagemProduto(rs.getString(5));
-                produto.setConteudoProduto(rs.getString(6));
-                produto.setComplementoProduto(rs.getString(7));
-                produto.setPrecoProduto(rs.getDouble(8));
-                produto.setQtdProduto(rs.getInt(9));
-                
+                produto.setNomeProduto(rs.getString("nomeProduto"));
+                produto.setPrecoProduto(rs.getDouble("precoProduto"));
+                produto.setQtdProduto(rs.getInt("qtdProduto"));
                 list.add(produto);
             }
             return list;
         } catch (SQLException ex) {
             System.out.println("Erro ao retornar um produto pelo nome: " + ex.getMessage());
+        }
+        return null;
+    }
+    
+    @Override
+    public Produto getOneProduto(int id){
+        ResultSet rs = this.getOne(id);
+        Produto produto = new Produto();
+        try {
+            produto.setCodProduto(rs.getInt(1));
+            produto.setNomeProduto(rs.getString("nomeProduto"));
+            produto.setPrecoProduto(rs.getDouble("precoProduto"));
+            produto.setQtdProduto(rs.getInt("qtdProduto"));
+           return produto;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao retornar um produto pelo codigo: " + ex.getMessage());
         }
         return null;
     }

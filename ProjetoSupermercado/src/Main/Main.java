@@ -5,22 +5,27 @@
  */
 package Main;
 import View.CadastroProduto;
+import View.JFMenu_principal;
+import View.JFloguim1;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-/**
+/** 
  *
  * @Joao
  */
+   
 public class Main extends JFrame {
-
-    public static void main(String[] args) {
-     Main m = new Main();
-        m.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        m.setSize(new Dimension(1100, 700));
-        m.add(new CadastroProduto());
-        m.setVisible(true);
+     public static void main(String args[]) {
+    Main me = new Main();
+        me.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+       
+        me.add(new JFMenu_principal());
+        me.setVisible(true);
+        me.setSize(900,800);
     }
     }
+       
+    
     
 
